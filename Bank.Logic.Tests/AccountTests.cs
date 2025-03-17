@@ -22,14 +22,9 @@ namespace Bank.Logic.Tests
             };
         }
 
-        public ITransaction CreateTransaction(TransactionType type, double amount, DateTime date)
+        public static ITransaction CreateTransaction(TransactionType type, double amount, DateTime date)
         {
-            return new Transaction
-            {
-                Type = type,
-                Amount = amount,
-                Date = date
-            };
+            return new Transaction(type, amount, date);
         }
 
         [Fact]
